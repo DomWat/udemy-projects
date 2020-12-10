@@ -1,8 +1,5 @@
-//not being used delete later if needed
-
-
 import React from 'react'
-import './Button.css'
+import classes from './Button.module.css'
 
 const button = (props) => (
     <button

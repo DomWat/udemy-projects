@@ -3,7 +3,7 @@ import Aux from '../../hoc/Aux'
 import Toolbar from '../Navigation/Toolbar/Toolbar'
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer'
 
-import './Layout.css'
+import classes from './Layout.module.css'
 
 class Layout extends Component {
 
@@ -15,7 +15,7 @@ class Layout extends Component {
         this.setState({showSideDrawer: false})
     }
 
-    sideDrawerToggleHandler = (prevState) => {
+    sideDrawerToggleHandler = () => {
         this.setState((prevState) => {
             return {showSideDrawer: !prevState.showSideDrawer}
         })
@@ -28,7 +28,7 @@ class Layout extends Component {
                 <SideDrawer 
                     open = {this.state.showSideDrawer} 
                     closed = {this.sideDrawerClosedHandler}/>
-                <main className='Content'>
+                <main className= {classes.Content}>
                     {this.props.children}
                 </main>
             </Aux>
