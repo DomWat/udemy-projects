@@ -7,8 +7,8 @@ class Checkout extends Component {
         ingredients: {
             lettuce: 1,
             meat: 1,
-            bacon: 1,
-            cheese: 1
+            cheese: 1,
+            bacon: 1
         }
     }
 
@@ -22,4 +22,4 @@ class Checkout extends Component {
 
 }
 
-export default Checkout
+export default Checkout 
