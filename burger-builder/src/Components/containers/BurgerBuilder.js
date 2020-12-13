@@ -29,6 +29,7 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount () {
+        // console.log(this.props)
         axios.get('https://dom-s-burger-palace-default-rtdb.firebaseio.com/ingredients.json')
             .then(response => {
                 this.setState({ingredients: response.data})
@@ -89,33 +90,34 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        // alert('You continue!')
-        this.setState( {loading: true} )
-        // uses the baseURL created in axios-orders + '/orders.json' and sends to firebase
-        // .json is required by firebase
-        // this is a POST
-        const order = {
-            // this creates the order that will be sent to DB
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice.toFixed(2),
-            customer: {
-                name: 'Dom Waters',
-                address: {
-                    street: 'Teststreet 1',
-                    city: 'Houston',
-                    state: 'Texas'
-                },
-                email: 'test@test.com'
-            },
-            deliveryMethod: 'fastest'
-        }
-        axios.post('/orders.json', order)
-            .then(response => {
-                this.setState({loading:false, purchasing: false})
-            })
-            .catch(error => {
-                this.setState({loading:false, purchasing: false})
-            })
+        // // alert('You continue!')
+        // this.setState( {loading: true} )
+        // // uses the baseURL created in axios-orders + '/orders.json' and sends to firebase
+        // // .json is required by firebase
+        // // this is a POST
+        // const order = {
+        //     // this creates the order that will be sent to DB
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice.toFixed(2),
+        //     customer: {
+        //         name: 'Dom Waters',
+        //         address: {
+        //             street: 'Teststreet 1',
+        //             city: 'Houston',
+        //             state: 'Texas'
+        //         },
+        //         email: 'test@test.com'
+        //     },
+        //     deliveryMethod: 'fastest'
+        // }
+        // axios.post('/orders.json', order)
+        //     .then(response => {
+        //         this.setState({loading:false, purchasing: false})
+        //     })
+        //     .catch(error => {
+        //         this.setState({loading:false, purchasing: false})
+        //     })
+        this.props.history.push('/checkout')
     }
 
     render() {
