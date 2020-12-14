@@ -1,6 +1,7 @@
 import React from 'react'
 import Aux from '../../../hoc/Aux'
 import classes from '../../UI/Button/Button.module.css'
+// import Button from '../../UI/Button/Button'
 
 const orderSummary = (props) => {
     const ingredientSummary = Object.keys(props.ingredients)
